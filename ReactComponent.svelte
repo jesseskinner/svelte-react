@@ -3,20 +3,20 @@
   import ReactDOM from "react-dom";
   import { afterUpdate } from "svelte";
 
-  export let children;
-  export let component;
-
-  let root;
+  let container;
 
   afterUpdate(render);
 
   async function render() {
+    const children = $$props.children;
+    const component = $$props.this;
+
     const props = Object.assign({}, $$props);
     delete props.children;
-    delete props.component;
+    delete props.this;
 
-    ReactDOM.render(React.createElement(component, props, children), root);
+    ReactDOM.render(React.createElement(component, props, children), container);
   }
 </script>
 
-<span bind:this={root} />
+<span bind:this={container} />

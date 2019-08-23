@@ -14,7 +14,7 @@ describe('Counter', () => {
 		new ReactComponent({
 			target: document.body,
 			props: {
-				component: Counter,
+				this: Counter,
 			},
 		});
 
@@ -27,7 +27,7 @@ describe('Counter', () => {
 		new ReactComponent({
 			target: document.body,
 			props: {
-				component: Counter,
+				this: Counter,
 				start: 1,
 			},
 		});
@@ -41,7 +41,7 @@ describe('Counter', () => {
 		new ReactComponent({
 			target: document.body,
 			props: {
-				component: Counter,
+				this: Counter,
 				children: ['The count is '],
 			},
 		});
@@ -55,7 +55,7 @@ describe('Counter', () => {
 		new ReactComponent({
 			target: document.body,
 			props: {
-				component: Counter,
+				this: Counter,
 			},
 		});
 
@@ -71,7 +71,7 @@ describe('Counter', () => {
 		const r = new ReactComponent({
 			target: document.body,
 			props: {
-				component: Counter,
+				this: Counter,
 			},
 		});
 

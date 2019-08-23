@@ -39,36 +39,33 @@ function create_fragment(ctx) {
 function instance($$self, $$props, $$invalidate) {
 	
 
-  let { children, component } = $$props;
-
-  let root;
+  let container;
 
   svelte.afterUpdate(render);
 
   async function render() {
+    const children = $$props.children;
+    const component = $$props.this;
+
     const props = Object.assign({}, $$props);
     delete props.children;
-    delete props.component;
+    delete props.this;
 
-    ReactDOM.render(React.createElement(component, props, children), root);
+    ReactDOM.render(React.createElement(component, props, children), container);
   }
 
 	function span_binding($$value) {
 		internal.binding_callbacks[$$value ? 'unshift' : 'push'](() => {
-			$$invalidate('root', root = $$value);
+			$$invalidate('container', container = $$value);
 		});
 	}
 
 	$$self.$set = $$new_props => {
 		$$invalidate('$$props', $$props = internal.assign(internal.assign({}, $$props), $$new_props));
-		if ('children' in $$new_props) $$invalidate('children', children = $$new_props.children);
-		if ('component' in $$new_props) $$invalidate('component', component = $$new_props.component);
 	};
 
 	return {
-		children,
-		component,
-		root,
+		container,
 		span_binding,
 		$$props: $$props = internal.exclude_internal_props($$props)
 	};
@@ -77,7 +74,7 @@ function instance($$self, $$props, $$invalidate) {
 class ReactComponent extends internal.SvelteComponent {
 	constructor(options) {
 		super();
-		internal.init(this, options, instance, create_fragment, internal.safe_not_equal, ["children", "component"]);
+		internal.init(this, options, instance, create_fragment, internal.safe_not_equal, []);
 	}
 }
 
