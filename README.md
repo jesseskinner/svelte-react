@@ -14,7 +14,11 @@ Use React components inside Svelte apps.
 
 ## Limitations
 
-`ReactComponent` does not take any children. If you want to specify children, you'll need to pass them in through the children prop. If you want to pass in HTML children, you could either use `React.createElement` or create a React component to do this.
+`ReactComponent` does not accept any children or slots. If you want to specify children to the React component, you have to pass them in through the `children` prop.
+
+## Resources
+
+This project was heavily inspired by [react-svelte](https://github.com/Rich-Harris/react-svelte). If you want to use Svelte components inside React apps, have a look at [react-svelte](https://github.com/Rich-Harris/react-svelte).
 
 ## License
 
