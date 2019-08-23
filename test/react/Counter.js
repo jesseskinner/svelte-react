@@ -1,9 +1,9 @@
-const React = require('react');
+const { useState, createElement } = require('react');
 
 module.exports = function({ start = 0, children = 'count = ' }) {
-	const [count, setCount] = React.useState(start);
+	const [count, setCount] = useState(start);
 	const onClick = () => setCount(count + 1);
 	const text = `${children}${count}`;
 
-	return React.createElement('button', { onClick }, [text]);
+	return createElement('button', { onClick }, [text]);
 };
