@@ -1,6 +1,6 @@
 <script>
-  import { createElement } from "react";
-  import { render, unmountComponentAtNode } from "react-dom";
+  import * as React from "react";
+  import * as ReactDOM from "react-dom";
   import { afterUpdate, onDestroy } from "svelte";
 
   let container;
@@ -13,11 +13,11 @@
     delete props.children;
     delete props.this;
 
-    render(createElement(component, props, children), container);
+    ReactDOM.render(React.createElement(component, props, children), container);
   });
 
   onDestroy(() => {
-    unmountComponentAtNode(container);
+    ReactDOM.unmountComponentAtNode(container);
   });
 </script>
 
