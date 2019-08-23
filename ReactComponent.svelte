@@ -1,6 +1,6 @@
 <script>
-  import React from "react";
-  import ReactDOM from "react-dom";
+  import * as React from "react";
+  import * as ReactDOM from "react-dom";
   import { afterUpdate } from "svelte";
 
   let container;
@@ -19,4 +19,4 @@
   }
 </script>
 
-<span bind:this={container} />
+<div bind:this={container} />
