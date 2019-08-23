@@ -1,0 +1,36 @@
+{
+	"name": "svelte-react",
+	"version": "0.0.1",
+	"description": "Use React components inside Svelte apps.",
+	"main": "dist/ReactComponent.cjs.js",
+	"module": "dist/ReactComponent.esm.js",
+	"scripts": {
+		"build": "rollup -c",
+		"test": "npm run build && mocha"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/jesseskinner/svelte-react.git"
+	},
+	"keywords": [
+		"svelte",
+		"react"
+	],
+	"author": "Jesse Skinner <jesse@thefutureoftheweb.com>",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/jesseskinner/svelte-react/issues"
+	},
+	"homepage": "https://github.com/jesseskinner/svelte-react#readme",
+	"devDependencies": {
+		"chai": "^4.2.0",
+		"jsdom": "^15.1.1",
+		"mocha": "^6.2.0",
+		"react": "^16.9.0",
+		"react-dom": "^16.9.0",
+		"rollup": "^1.20.1",
+		"rollup-plugin-svelte": "^5.1.0",
+		"svelte": "^3.9.1"
+	},
+	"dependencies": {}
+}
