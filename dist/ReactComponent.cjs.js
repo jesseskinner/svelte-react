@@ -50,6 +50,10 @@ function instance($$self, $$props, $$invalidate) {
     reactDom.render(react.createElement(component, props, children), container);
   });
 
+  svelte.onDestroy(() => {
+    reactDom.unmountComponentAtNode(container);
+  });
+
 	function div_binding($$value) {
 		internal.binding_callbacks[$$value ? 'unshift' : 'push'](() => {
 			$$invalidate('container', container = $$value);

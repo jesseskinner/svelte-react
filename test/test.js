@@ -84,4 +84,18 @@ describe('Counter', () => {
 			expect(button.innerHTML).to.equal('Count is 1');
 		});
 	});
+
+	it('should destory without issue', () => {
+		const r = new ReactComponent({
+			target: document.body,
+			props: {
+				this: Counter,
+			},
+		});
+
+		r.$destroy();
+
+		const button = document.querySelector('button');
+		expect(button).to.equal(null);
+	});
 });
