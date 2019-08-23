@@ -2,8 +2,7 @@
 	"name": "svelte-react",
 	"version": "0.0.5",
 	"description": "Use React components inside Svelte apps.",
-	"main": "dist/ReactComponent.cjs.js",
-	"module": "dist/ReactComponent.esm.js",
+	"main": "dist/ReactComponent.js",
 	"scripts": {
 		"build": "rollup -c",
 		"test": "npm run build && mocha"

@@ -1,5 +1,5 @@
 const expect = require('chai').expect;
-const ReactComponent = require('../dist/ReactComponent.cjs.js');
+const ReactComponent = require('../dist/ReactComponent.js');
 const Counter = require('./react/Counter.js');
 const { JSDOM } = require('jsdom');
 
