@@ -6,14 +6,14 @@
   let container;
 
   afterUpdate(() => {
-    const children = $$props.children;
+    const children = typeof $$props.children === 'string' ? $$props.children : React.createElement($$props.children);
     const component = $$props.this;
 
     const props = Object.assign({}, $$props);
     delete props.children;
     delete props.this;
 
-    ReactDOM.render(React.createElement(component, props, React.createElement(children)), container);
+    ReactDOM.render(React.createElement(component, props, children), container);
   });
 
   onDestroy(() => {
