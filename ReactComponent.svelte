@@ -10,7 +10,7 @@
     const component = $$props.this;
     
     if (children && typeof children !== 'string') {
-      children = React.createElement($$props.children);
+      children = React.createElement(children);
     }
 
     const props = Object.assign({}, $$props);
