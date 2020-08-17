@@ -6,10 +6,10 @@
   let container;
 
   afterUpdate(() => {
-    let children = typeof $$props.children;
+    let children = $$props.children;
     const component = $$props.this;
     
-    if (children && typeof $$props.children !== 'string') {
+    if (children && typeof children !== 'string') {
       children = React.createElement($$props.children);
     }
 
