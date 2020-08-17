@@ -6,8 +6,12 @@
   let container;
 
   afterUpdate(() => {
-    const children = typeof $$props.children === 'string' ? $$props.children : React.createElement($$props.children);
+    let children = typeof $$props.children;
     const component = $$props.this;
+    
+    if (children && typeof $$props.children !== 'string') {
+      children = React.createElement($$props.children);
+    }
 
     const props = Object.assign({}, $$props);
     delete props.children;
