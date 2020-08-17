@@ -13,7 +13,7 @@
     delete props.children;
     delete props.this;
 
-    ReactDOM.render(React.createElement(component, props, children), container);
+    ReactDOM.render(React.createElement(component, props, React.createElement(children)), container);
   });
 
   onDestroy(() => {
