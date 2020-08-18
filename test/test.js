@@ -1,6 +1,7 @@
 const expect = require('chai').expect;
 const ReactComponent = require('../dist/ReactComponent.js');
 const Counter = require('./react/Counter.js');
+const FunctionCounter = require('./react/FunctionCounter.js');
 const { JSDOM } = require('jsdom');
 
 describe('Counter', () => {
@@ -97,5 +98,19 @@ describe('Counter', () => {
 
 		const button = document.querySelector('button');
 		expect(button).to.equal(null);
+	});
+
+	it('should work with function children that return dom elements', () => {
+		const r = new ReactComponent({
+			target: document.body,
+			props: {
+				this: FunctionCounter,
+				children: count => `The count is ${count}!`
+			},
+		});
+
+		const button = document.querySelector('button');
+
+		expect(button.innerHTML).to.equal('The count is 0!');
 	});
 });
