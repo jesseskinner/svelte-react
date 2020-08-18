@@ -9,7 +9,7 @@
     let children = $$props.children;
     const component = $$props.this;
     
-    if (children && typeof children !== 'string') {
+    if (children && typeof children === 'function') {
       children = React.createElement(children);
     }
 
