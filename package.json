@@ -3,6 +3,7 @@
 	"version": "1.0.0",
 	"description": "Use React components inside Svelte apps.",
 	"main": "dist/ReactComponent.js",
+	"svelte": "ReactComponent.svelte",
 	"scripts": {
 		"build": "rollup -c",
 		"test": "npm run build && mocha"
